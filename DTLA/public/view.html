@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{{template "head.tmpl.html"}}
+		<title>{{.Data.Title}}</title>
+	</head>
+
+	<body>
+		{{template "navbar.tmpl.html" .}}
+		<div class="cw-outer">
+			<main>
+				{{if eq .Auth.Status .Auth.ASOk}}
+				<a href="/edit/{{.Data.ID}}">Rediģēt</a>
+				{{end}}
+
+				<div class="cw-center"><h1>{{.Data.Title}}</h1></div>
+				<div class="post-body">{{.Data.Body}}</div>
+			</main>
+			{{template "footer.tmpl.html"}}
+		</div>
+	</body>
+</html>

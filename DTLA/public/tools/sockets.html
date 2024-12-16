@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	{{template "head.tmpl.html"}}
+	<title>Tīkla savienojumi</title>
+</head>
+
+<body>
+	{{template "navbar.tmpl.html" .}}
+	<div class="cw-outer">
+		<main>
+			<div class="cw-center">
+				<h1>Tīkla savienojumi</h1>
+			</div>
+			<form id="sockets-form">
+				<fieldset>
+					<legend>Sūtīšanas virziens</legend>
+					<label for="sockets-form-A2B">A <i class="fa-solid fa-arrow-right"></i> B</label>
+					<input type="radio" name="sockets-form-dir" id="sockets-form-dir-A2B" value="A2B" checked />
+					<br />
+					<label for="sockets-form-A2B">B <i class="fa-solid fa-arrow-right"></i> A</label>
+					<input type="radio" name="sockets-form-dir" id="sockets-form-dir-B2A" value="B2A" />
+				</fieldset>
+
+				<textarea id="sockets-form-input">123</textarea>
+				<!-- <label for="sockets-form-enc">Šifrēt:</label> -->
+				<!-- <input type="checkbox" id="sockets-form-enc" /> -->
+
+				<br />
+				<button type="button" id="sockets-form-submit">Iesniegt</button>
+			</form>
+			<table id="sockets-table">
+				<colgroup span="3" style="background-color: var(--col6);"></colgroup>
+				<colgroup span="1"></colgroup>
+				<colgroup span="3" style="background-color: var(--col6);"></colgroup>
+				<thead>
+					<tr>
+						<th colspan="3">Sūtītājs</th>
+						<th colspan="1">"Pa vadu"</th>
+						<th colspan="3">Saņēmējs</th>
+					</tr>
+					<tr>
+						<th>Nosaukums</th>
+						<th>IP</th>
+						<th>Ports</th>
+
+						<th>Pakete</th>
+
+						<th>Nosaukums</th>
+						<th>IP</th>
+						<th>Ports</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+
+			<dialog id="packet-dialog">
+				<div id="packet-dialog-content">
+					<div id="packet-dialog-topbar">
+						<button id="packet-dialog-exit"><i class="fa-regular fa-xmark"></i></button>
+					</div>
+					<p id="packet-dialog-dump"></p>
+				</div>
+			</dialog>
+		</main>
+		{{template "footer.tmpl.html"}}
+		<script src="/js/sockets.js"></script>
+</body>
+
+</html>

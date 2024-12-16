@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{{template "head.tmpl.html"}}
+		<title>Kriptogrāfija</title>
+	</head>
+
+	<body>
+		{{template "navbar.tmpl.html" .}}
+		<div class="cw-outer">
+			<main>
+				<div class="cw-center"><h1>Kriptogrāfija</h1></div>
+				<p>Izmantojot <a href="https://www.w3.org/TR/WebCryptoAPI/">Web Crypto API</a>, kas ir <a href="https://lv.wikipedia.org/wiki/Lietojumprogrammas_saskarne">aplikāciju programmēšanas interfeiss</a> priekš Javascript, var viegli izmantot Javascript, lai veiktu dažādas ar kriptogrāfiju saistītas lietas.
+				Atbalstīti ir <a href="https://www.w3.org/TR/WebCryptoAPI/#algorithm-overview">dažādi</a> algoritmi gan priekš hash izveides, gan arī šifrēšanai ar atslēgām</p>
+				<h3 class="h-spacing">Teksts <i class="fa-solid fa-arrow-right-long"></i> hash</h3>
+				<p>Pārvērš UTF8 enkodētu ievadīto tekstu par hash izmantojot izvēlēto hash funkciju/algoritmu.</p>
+				<form id="hash-form">
+					<fieldset id="hash-form-funcs">
+						<legend>Hash funkcija</legend>
+
+						<input type="radio" name="hash-form-func" value="SHA-1" id="hash-form-func-sha1"/>
+						<label for="hash-form-sha1">SHA1</label>
+
+						<input type="radio" name="hash-form-func" value="SHA-256" id="hash-form-func-sha256"/>
+						<label for="hash-form-sha256">SHA256</label>
+
+						<input type="radio" name="hash-form-func" value="SHA-384" id="hash-form-func-sha384"/>
+						<label for="hash-form-sha384">SHA384</label>
+
+						<input type="radio" name="hash-form-func" value="SHA-512" id="hash-form-func-sha512"/>
+						<label for="hash-form-sha512">SHA512</label>
+					</fieldset>
+					<textarea id="hash-form-input"></textarea>
+					<input type="text" id="hash-form-output" readonly/>
+					<button type="button" id="hash-form-submit">Iesniegt</button>
+				</form>
+			</main>
+			{{template "footer.tmpl.html"}}
+			<script src="/js/hash.js"></script>
+	</body>
+</html>

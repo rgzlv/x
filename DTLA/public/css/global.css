@@ -1,0 +1,25 @@
+:root {
+	font-size: 26px;
+	--col1: #00add8;
+	--col2: #00a29c;
+	--col3: #5dc9e2;
+	--col4: #ce3262;
+	--col5: #fddd00;
+	--col6: #c6c8ca;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+}
+

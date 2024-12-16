@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{{template "head.tmpl.html"}}
+		<title>Rediģē {{.Data.Title}}</title>
+	</head>
+
+	<body>
+		{{template "navbar.tmpl.html" .}}
+		<div class="cw-outer">
+			<main>
+				<form action="/save/{{.Data.ID}}" method="post">
+					<div class="cw-center"><input type="text" name="post-title" id="input-post-title" value="{{.Data.Title}}" minlength="1"/></div>
+					<textarea name="post-desc" id="input-post-desc" minlength="0" rows="3">{{.Data.Desc}}</textarea>
+					<textarea name="post-body" id="input-post-body" minlength="1" rows="10">{{.Data.Body}}</textarea>
+					<br/>
+					<input type="submit" value="Iesniegt" style="margin-bottom: 15px;"/>
+				</form>
+			</main>
+			{{template "footer.tmpl.html"}}
+		</div>
+	</body>
+</html>

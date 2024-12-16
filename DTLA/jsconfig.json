@@ -1,0 +1,10 @@
+/* Settings
+ * javascript.inlayHints.variableTypes.enabled
+ * javascript.inlayHints.functionLikeReturnTypes.enabled
+ */
+{
+	"compilerOptions": {
+		"checkJs": true,
+		"target": "ES2017"
+	}
+}

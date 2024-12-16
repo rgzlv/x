@@ -1,0 +1,30 @@
+<nav>
+	<ul>
+		<li><a href="/" {{if eq .URLPath "/" }}id="nav-active" {{end}}>DTLA</a></li>
+		<li><a href="/view/" {{if or (eq .URLPath "/view/" ) (eq .URLPath "/edit/" )}}id="nav-active"
+				{{end}}>Ieteikumi</a></li>
+		<!-- <li>
+			<a href="#" class="nav-non-clickable">Programmas <i class="fa-solid fa-angle-down" style="font-size: 14px;"></i> </a>
+			<div class="dropdown">
+				<a href="#">Tīkliem</a>
+				<a href="#">Programmu pārbaudei</a>
+				<a href="#">Servera informācijai</a>
+			</div>
+		</li> -->
+		<li>
+			<a href="#" class="nav-non-clickable" {{if eq .URLPath "/tools/" }}id="nav-active" {{end}}>Rīki <i
+					class="fa-solid fa-angle-down" style="font-size: 14px;"></i> </a>
+			<div class="dropdown">
+				<a href="/tools/crypto">Kriptogrāfija</a>
+				<a href="/tools/sockets">Tīkla savienojumi</a>
+			</div>
+		</li>
+		{{if eq .Auth.Status .Auth.ASOk }}
+		<li class="nav-non-clickable" id="nav-user"><a>{{.Auth.User}}</a></li>
+		<li><a href="/logout">Iziet</a></li>
+		{{else}}
+		<li style="margin-left: auto;"><a href="/login" {{if eq .URLPath "/login" }}id="nav-active" {{end}}>Ieiet</a>
+		</li>
+		{{end}}
+	</ul>
+</nav>

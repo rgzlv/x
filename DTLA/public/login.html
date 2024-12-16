@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{{template "head.tmpl.html"}}
+		<title>Ieiet</title>
+	</head>
+
+	<body>
+		<div class="cw-outer" style="margin: 0; padding: 0;">
+			<main style="margin: 0; padding:0; height: 100%;">
+				<div class="cw-center" style="margin:0; padding: 0; height: 50%; align-items: end;">
+					<form action="/login" method="post" id="form-login">
+						<label for="input-user">Lietotājvārds</label> <input type="text" name="login-name" id="input-user" minlength="1"/><br/>
+						<label for="input-pswd">Parole</label> <input type="password" name="login-pswd" id="input-pswd" minlength="1"/><br/>
+						<input type="submit" value="Ieiet"/><br/>
+					</form>
+					<br/>
+
+				</div>
+
+				{{if eq .Auth.Status .Auth.ASError}}
+				<div class="cw-center" style="margin-top: 15px;">
+					<div class="errMsg">
+						<p>{{.Auth.Error}}</p>
+					</div>
+				</div>
+				{{end}}
+
+				{{if eq .Auth.Status .Auth.ASOk}}
+				<div class="cw-center" style="margin-top: 15px;">
+					<div class="okMsg">
+						<p>Viss ok</p>
+					</div>
+				</div>
+				{{end}}
+			
+			</main>
+		</div>
+	</body>
+</html>

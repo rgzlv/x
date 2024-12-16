@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{{template "head.tmpl.html"}}
+		<title>Ieteikumi</title>
+	</head>
+
+	<body>
+		{{template "navbar.tmpl.html" .}}
+		<div class="cw-outer">
+			<main>
+				{{if eq .Auth.Status .Auth.ASOk}}
+				<div style="width: 100%; margin-bottom: 20px;">
+					<a href="/new/" style="font-size: 0.6rem">Jauns</a>
+				</div>
+				{{end}}
+				{{range .Data}}
+				<div class="post-list-item">
+					{{if eq $.Auth.Status $.Auth.ASOk}}
+					<div class="post-list-item-manage">
+						<a href="/edit/{{.ID}}">Rediģēt</a>
+						<a href="/delete/{{.ID}}">Dzēst</a>
+					</div>
+					{{end}}
+					<div>#{{.ID}}</div>
+					<a href="/view/{{.ID}}" class="post-list-item-title">{{.Title}}</a><br/>
+					<p>{{.Desc}}</p>
+				</div>
+				{{end}}
+			</main>
+			{{template "footer.tmpl.html"}}
+		</div>
+	</body>
+</html>
