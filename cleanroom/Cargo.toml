@@ -1,0 +1,21 @@
+[package]
+name = "cleanroom"
+version = "0.0.3"
+edition = "2021"
+repository = "https://git.rgz.lv/cemetery/cleanroom"
+authors = ["rgz"]
+description = "Shell environment manager"
+readme = "README.md"
+keywords = ["cli", "shell", "terminal", "environment", "manager"]
+categories = ["command-line-utilities", "virtualization"]
+
+[dependencies]
+thiserror = "1"
+xdg = "2"
+clap = { version = "4", features = ["derive", "wrap_help"] }
+libc = "0.2"
+serde = { version = "1.0", features = ["derive"] }
+toml = "0"
+
+[dev-dependencies]
+rand = "0.8.5"
